@@ -3,6 +3,7 @@ import { useRouter } from "expo-router";
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { i18n } from "@/contexts/LanguageContext";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -15,11 +16,11 @@ export default function LoginScreen() {
         source={require("../assets/images/avatar.png")}
         style={styles.avatar}
       /> */}
-      <Text style={styles.title}>Bienvenido</Text>
+      <Text style={styles.title}>{i18n.t("greeting")}</Text>
 
       <TextInput
         style={styles.input}
-        placeholder="Correo electrónico"
+        placeholder={i18n.t("email")}
         placeholderTextColor="#777"
         value={email}
         onChangeText={setEmail}
@@ -28,7 +29,7 @@ export default function LoginScreen() {
       />
 
       <TouchableOpacity style={styles.button} onPress={() => { login(email); router.replace("/inicio"); }}>
-        <Text style={styles.buttonText}>Ingresar</Text>
+        <Text style={styles.buttonText}>{i18n.t("login")}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#4C6EF5",
   },
-    title: {
+  title: {
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 20,

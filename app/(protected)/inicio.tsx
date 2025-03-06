@@ -3,6 +3,7 @@ import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
+import { i18n } from "@/contexts/LanguageContext";
 
 export default function InicioScreen() {
     const router = useRouter();
@@ -28,7 +29,7 @@ export default function InicioScreen() {
                     onPressOut={handlePressOut}
                 >
                     <Ionicons name="list" size={28} color="white" />
-                    <Text style={styles.buttonText}>Recordatorio</Text>
+                    <Text style={styles.buttonText}>{i18n.t("reminder")}</Text>
                 </TouchableOpacity>
             </Animated.View>
 
@@ -40,7 +41,7 @@ export default function InicioScreen() {
                     onPressOut={handlePressOut}
                 >
                     <Ionicons name="add" size={28} color="white" />
-                    <Text style={styles.buttonText}>Nuevo Recordatorio</Text>
+                    <Text style={styles.buttonText}>{i18n.t("newReminder")}</Text>
                 </TouchableOpacity>
             </Animated.View>
         </View>

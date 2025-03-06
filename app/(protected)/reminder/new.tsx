@@ -3,6 +3,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Animated, TouchableOpacity } from "react-native";
 import { useAuth, Reminder as Reminder } from "@/contexts/AuthContext";
+import { i18n } from "@/contexts/LanguageContext";
 
 
 export default function NewScreen() {
@@ -39,7 +40,7 @@ export default function NewScreen() {
 
     return (
         <View style={styles.container}>
-            <Text >Titulo</Text>
+            <Text >{i18n.t("tittle")}</Text>
 
             <TextInput
                 style={styles.input}
@@ -47,7 +48,7 @@ export default function NewScreen() {
                 onChangeText={setTitulo}
                 keyboardType="default"
             />
-            <Text >Descripcion</Text>
+            <Text >{i18n.t("description")}</Text>
 
             <TextInput
                 multiline
@@ -64,7 +65,7 @@ export default function NewScreen() {
                     onPressOut={handlePressOut}
                 >
                     <Ionicons name="save" size={28} color="white" />
-                    <Text style={styles.buttonText}>Guardar</Text>
+                    <Text style={styles.buttonText}>{i18n.t("save")}</Text>
                 </TouchableOpacity>
             </Animated.View>
 
@@ -76,7 +77,7 @@ export default function NewScreen() {
                     onPressOut={handlePressOut}
                 >
                     <Ionicons name="trash-bin" size={28} color="white" />
-                    <Text style={styles.buttonText}>Borrar</Text>
+                    <Text style={styles.buttonText}>{i18n.t("erase")}</Text>
                 </TouchableOpacity>
             </Animated.View>
         </View>

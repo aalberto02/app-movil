@@ -1,9 +1,9 @@
 import { createContext, isValidElement, useContext, useState } from "react"
 
 const defaultReminders = [
-    { id: '1', titulo: "Crear BDD", descripcion: "Creacion de la base de datos sql." },
-    { id: '2', titulo: "Arreglar bug del ui", descripcion: "La pantalla de inicio se pone en blanco" },
-    { id: '3', titulo: "Hacer pull request", descripcion: "Integrar los commits al repositorio" },
+    { id: '1', titulo: "Ir por pan", descripcion: "Hay que ir por pan" },
+    { id: '2', titulo: "Preparar Almuerzo", descripcion: "Hay que preparar almuerzo" },
+    { id: '3', titulo: "Llevar el perro a bañar", descripcion: "El perro necesita un baño" },
 ]
 type User = {
     email: string,

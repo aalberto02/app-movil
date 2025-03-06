@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import ReminderCard from "@/components/ReminderCard";
 import { useAuth } from "@/contexts/AuthContext";
+import { i18n } from "@/contexts/LanguageContext";
 
 export default function Index() {
   const { user } = useAuth();
@@ -11,7 +12,7 @@ export default function Index() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Ionicons name="list" size={32} color="#2D2E32" />
-        <Text style={styles.title}>Tareas</Text>
+        <Text style={styles.title}>{i18n.t("reminders")}</Text>
       </View>
 
       {(user != null && <FlatList
